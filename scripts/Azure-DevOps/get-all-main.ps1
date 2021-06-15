@@ -47,7 +47,7 @@ try {
                 Write-Host "Cloning" $repoName -ForegroundColor Green
 
                 try {
-                    git clone $repoUrl --branch master --single-branch -q
+                    git clone $repoUrl --branch main --single-branch -q
                 } catch {
                     Write-Warning $Error[0]
                 }                
