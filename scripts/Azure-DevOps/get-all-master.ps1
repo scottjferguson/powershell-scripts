@@ -46,7 +46,7 @@ try {
             if (!(Test-Path -Path $repoName)) {
                 Write-Host "Cloning" $repoName -ForegroundColor Green
 
-                git clone $repoUrl --branch main -v
+                git clone $repoUrl --branch master -v
             } elseif ($isPullIfExists -eq $true) {
                 Write-Host "Pulling" $repoName -ForegroundColor Yellow
 
