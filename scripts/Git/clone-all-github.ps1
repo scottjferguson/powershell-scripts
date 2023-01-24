@@ -1,6 +1,6 @@
 try {
     # Import settings from config file
-    $config = Get-Content -Raw -Path "get-all.config" | ConvertFrom-Json
+    $config = Get-Content -Raw -Path "clone-all-github.config" | ConvertFrom-Json
 
     $reposUrl = $config.Url
     $isPullIfExists = $config.IsPullIfExists
