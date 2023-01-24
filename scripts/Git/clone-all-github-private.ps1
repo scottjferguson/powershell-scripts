@@ -4,6 +4,7 @@ try {
 
     $reposUrl = $config.Url
     $username = $config.Username
+    $organization = $config.Organization
     $personalAccessToken = $config.PersonalAccessToken
     $isPullIfExists = $config.IsPullIfExists
 
@@ -19,7 +20,8 @@ try {
     $repos.ForEach({
 
         $repoName = $_.name
-        $repoUrl = $_.clone_url
+        $repoUrl = "https://{0}@github.com/{1}/{2}.git" -f $personalAccessToken, $organization, $repoName
+
         $projectDirectory = get-location
 
         if (!(Test-Path -Path $repoName)) {
