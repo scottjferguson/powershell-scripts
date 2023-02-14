@@ -1,15 +1,14 @@
-function RenameDirectory ($item, $find, $replace) {
+function RenameDirectory($item, $find, $replace) {
     try {
       $newName = $item.Name.Replace($find, $replace)
       Rename-Item $item.FullName -NewName $newName -ErrorAction Stop
     }
-    catch 
-    {
+    catch {
         Write-Host "An error occurred in RenameDirectory:" -ForegroundColor Red
         Write-Host $_ -ForegroundColor Red
         Write-Host $_.ScriptStackTrace -ForegroundColor Red
     }
-  }
+}
 
 try {
     $rootDirectory = get-location
